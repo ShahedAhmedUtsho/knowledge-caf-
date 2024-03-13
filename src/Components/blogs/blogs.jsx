@@ -13,6 +13,9 @@ const Blogs = () => {
     return (
         <div className="bg-red-200 md:w-2/3">
           <h4>blogs : {blogs.length}</h4>
+          {
+            blogs.map(blog => <Blog blog={blog} key={blog.id}></Blog>)
+          }
         </div>
     );
 };
