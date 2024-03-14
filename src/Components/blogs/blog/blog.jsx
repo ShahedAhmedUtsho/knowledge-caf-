@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import bookmarkSvg from '../../../img/Frame.svg'
 const Blog = ({blog , handleBookmarkAdd,handleMarkAsRead}) => {
-    const {title,cover_img,author_img,reading_time,author,posted_date,hashtags} = blog;
+    const {title,cover_img,author_img,reading_time,author,posted_date,hashtags,id} = blog;
     
     
     return (
@@ -37,7 +37,10 @@ const Blog = ({blog , handleBookmarkAdd,handleMarkAsRead}) => {
            }
 
            </div>
-           <button onClick={()=>{handleMarkAsRead(reading_time)}}  className='border-[1px] border-black px-[1em] py-[0.5em] rounded-full mb-5 text-sm'>make as read</button>
+           <button onClick={()=>{
+            
+         return   handleMarkAsRead(id,reading_time)
+            }}  className='border-[1px] border-black px-[1em] py-[0.5em] rounded-full mb-5 text-sm'>make as read</button>
          
         </div>
     );
