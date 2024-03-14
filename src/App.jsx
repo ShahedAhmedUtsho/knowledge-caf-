@@ -16,16 +16,17 @@ const handleBookmarkAdd = blog => {
 const [readingTime,setReadingTime] =useState(0);
 
 
-const handleMarkAsRead = () =>{
-  console.log('connected')
+const handleMarkAsRead = (reading_time) =>{
+ setReadingTime( parseInt(readingTime )+ parseInt(reading_time))
+ console.log(readingTime)
 }
 
   return (
     <>
     <Header></Header>
     <div className="max-w-[1170px] md:mx-auto mx-5 md:flex ">
-    <Blogs handleBookmarkAdd={handleBookmarkAdd} handleMarkAsRead={handleMarkAsRead}></Blogs>
-    <Bookmark bookmarks={bookmarks}  ></Bookmark>
+    <Blogs handleBookmarkAdd={handleBookmarkAdd} handleMarkAsRead={handleMarkAsRead} ></Blogs>
+    <Bookmark bookmarks={bookmarks} readingTime={readingTime} ></Bookmark>
     </div>
     </>
   )
